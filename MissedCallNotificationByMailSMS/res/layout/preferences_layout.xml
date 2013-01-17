@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="false" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/destinationsText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/destinations_label"
+            android:textSize="@dimen/text_size_large" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/destinationsText"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/textMailLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line" />
+
+        <EditText
+            android:id="@+id/textNewMail"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textMailLabel"
+            android:hint="@string/new_mail_hint"
+            android:inputType="textEmailAddress" >
+        </EditText>
+
+        <Button
+            android:id="@+id/changeMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textNewMail"
+            android:layout_alignBottom="@+id/textNewMail"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="0dp"
+            android:text="@string/button_save" />
+
+        <TextView
+            android:id="@+id/textSmsLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/changeMail" />
+
+        <EditText
+            android:id="@+id/textNewNumber"
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textSmsLabel"
+            android:hint="@string/new_sms_hint"
+            android:inputType="numberDecimal" >
+        </EditText>
+
+        <Button
+            android:id="@+id/pickContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textNewNumber"
+            android:layout_alignBottom="@+id/textNewNumber"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/contacts" />
+
+        <Button
+            android:id="@+id/changeNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textNewNumber"
+            android:layout_marginRight="0dp"
+            android:text="@string/button_save" />
+
+        <TextView
+            android:id="@+id/othersText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/changeNumber"
+            android:layout_marginTop="25dp"
+            android:text="@string/more_configurations"
+            android:textSize="@dimen/text_size_large" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/othersText"
+            android:background="@android:color/darker_gray" />
+
+        <TextView
+            android:id="@+id/delayOptionSelectedText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line2"
+            android:layout_marginTop="5dp" />
+
+        <ExpandableListView
+            android:id="@+id/expandableDelayOptions"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/delayOptionSelectedText"
+            android:layout_marginTop="5dp"
+            android:childDivider="@android:color/white"
+            android:groupIndicator="@null" >
+        </ExpandableListView>
+    </RelativeLayout>
+
+</ScrollView>

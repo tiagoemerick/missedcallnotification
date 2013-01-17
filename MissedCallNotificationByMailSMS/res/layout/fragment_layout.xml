@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ActionHomeCompact"
+    android:fillViewport="false" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/text_size_medium" />
+
+        <Button
+            android:id="@+id/changeStatus"
+            style="@style/HomeButton"
+            android:layout_marginTop="7dp"
+            android:drawableTop="@drawable/activate"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/textNotificationMethod"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="@string/notification_type_label"
+            android:textSize="@dimen/text_size_medium" />
+
+        <RadioGroup
+            android:id="@+id/radioNotificationMethodEmailSmsGroup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/radioNotificationMethodEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:clickable="false"
+                android:text="@string/notification_type_mail"
+                android:textColor="#ff000000"
+                android:textSize="@dimen/text_size_small" />
+
+            <RadioButton
+                android:id="@+id/radioNotificationMethodSms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:clickable="false"
+                android:text="@string/notification_type_sms"
+                android:textColor="#ff000000"
+                android:textSize="@dimen/text_size_small" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/buttonsActionsLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/settings"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/final_balloon_gear_green_light"
+                android:onClick="onButtonClicker"
+                android:text="@string/preferences_label"
+                android:textSize="@dimen/text_size_small" />
+
+            <Button
+                android:id="@+id/notifications"
+                style="@style/HomeButton"
+                android:drawableTop="@drawable/final_balloon_gear_green_light"
+                android:onClick="onButtonClicker"
+                android:text="@string/notifications_label"
+                android:textSize="@dimen/text_size_small" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

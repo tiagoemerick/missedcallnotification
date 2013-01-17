@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Notificação de Ligações Perdidas</string>
+
+    <!-- General -->
+    <string name="notification_type_label">Notificar via:</string>
+    <string name="notification_type_mail">Email</string>
+    <string name="notification_type_sms">SMS</string>
+    <string name="preferences_label">Preferências</string>
+    <string name="notifications_label">Notificações</string>
+    <string name="button_save">Salvar</string>
+    <string name="title_header">Notificação de Ligações Perdidas</string>
+    <string name="loading_label">Carregando</string>
+
+    <!-- Home -->
+    <string name="status_active">Ativo</string>
+    <string name="status_inactive">Inativo</string>
+
+    <!-- Preferences -->
+    <string name="destinations_label">Destinos</string>
+    <string name="actual_mail">Email atual:</string>
+    <string name="actual_sms">Número atual:</string>
+    <string name="new_mail_hint">Novo email</string>
+    <string name="new_sms_hint">Novo número</string>
+    <string name="more_configurations">Mais configurações</string>
+    <string name="actual_delay_label">Tempo de espera atual:</string>
+    <string name="actual_delay_notdefined">Não definido</string>
+    <string name="preferences_saved">Preferência salva com sucesso!</string>
+    <string name="mail_saved_message">Email alterado com sucesso!</string>
+    <string name="sms_saved_message">Número alterado com sucesso!</string>
+    <string name="wait_time_label">>> Tempo de espera:</string>
+    <string name="wait_time_immediately">Imediatamente após</string>
+    <string name="wait_time_15minutes">15 minutos</string>
+    <string name="wait_time_30minutes">30 minutos</string>
+    <string name="wait_time_60minutes">60 minutos</string>
+
+    <!-- List -->
+    <string name="image_listtab_description">Tipo da notificação</string>
+    <string name="image_listtab_options">Opções</string>
+
+    <!-- Main tab -->
+    <string name="tab_tosend_label">A enviar</string>
+    <string name="tab_sent_label">Enviadas</string>
+    <string name="tab_error_label">Erros</string>
+    <string name="list_option_call">Chamar</string>
+    <string name="list_option_sms">SMS</string>
+    <string name="list_option_delete">Excluir</string>
+
+    <!-- To send tab -->
+    <string name="list_option_sendnow">Enviar agora</string>
+
+    <!-- Sent tab -->
+    <string name="list_option_sendaagain">Enviar novamente</string>
+
+    <!-- Error tab -->
+    <string name="list_option_tryagain">Tentar novamente</string>
+
+    <!-- Mail notification -->
+    <string name="mail_body_1">Você recebeu uma ligação perdida de:</string>
+    <string name="mail_body_2">às</string>
+    <string name="mail_subject">Você teve uma ligação perdida</string>
+
+    <!-- SMS notification -->
+    <string name="sms_body_1">Ligação perdida de:</string>
+    <string name="sms_body_2">às</string>
+
+    <!-- Phone types -->
+    <string name="type_phone_home">Casa</string>
+    <string name="type_phone_mobile">Celular</string>
+    <string name="type_phone_work">Trabalho</string>
+    <string name="type_phone_mobile_work">Celular trabalho</string>
+
+</resources>
