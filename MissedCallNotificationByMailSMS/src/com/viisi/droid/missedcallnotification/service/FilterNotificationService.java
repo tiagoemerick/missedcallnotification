@@ -20,12 +20,14 @@ public class FilterNotificationService extends Service {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Bundle intentExtras = intent.getExtras();
-		if (intentExtras != null) {
-			String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
-			Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
-			if (missedCallNumber != null && idMissedCallLog != null) {
-				sendNotification(missedCallNumber, idMissedCallLog);
+		if (intent != null) {
+			Bundle intentExtras = intent.getExtras();
+			if (intentExtras != null) {
+				String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
+				Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
+				if (missedCallNumber != null && idMissedCallLog != null) {
+					sendNotification(missedCallNumber, idMissedCallLog);
+				}
 			}
 		}
 		return super.onStartCommand(intent, flags, startId);

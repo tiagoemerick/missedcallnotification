@@ -23,16 +23,18 @@ public class MailNotificationService extends Service {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Bundle intentExtras = intent.getExtras();
-		if (intentExtras != null) {
-			String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
-			Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
-			sentTime = intentExtras.getLong(Constants.tablemissedcallslog.column_scheduletime);
-
-			if (stillNotificationActive(idMissedCallLog)) {
-				String mailBody = getMailBody(missedCallNumber, idMissedCallLog);
-
-				sendMail(missedCallNumber, mailBody, idMissedCallLog);
+		if (intent != null) {
+			Bundle intentExtras = intent.getExtras();
+			if (intentExtras != null) {
+				String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
+				Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
+				sentTime = intentExtras.getLong(Constants.tablemissedcallslog.column_scheduletime);
+				
+				if (stillNotificationActive(idMissedCallLog)) {
+					String mailBody = getMailBody(missedCallNumber, idMissedCallLog);
+					
+					sendMail(missedCallNumber, mailBody, idMissedCallLog);
+				}
 			}
 		}
 		return super.onStartCommand(intent, flags, startId);

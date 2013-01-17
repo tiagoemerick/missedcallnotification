@@ -41,17 +41,19 @@ public class SmsNotificationService extends Service {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Bundle intentExtras = intent.getExtras();
-		if (intentExtras != null) {
-			String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
-			Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
-			sentTime = intentExtras.getLong(Constants.tablemissedcallslog.column_scheduletime);
-
-			if (stillNotificationActive(idMissedCallLog)) {
-				String destinationNumber = getDestinationNumber();
-				if (!destinationNumber.trim().equals("") && idMissedCallLog != null) {
-					String messageBody = getMessageBody(missedCallNumber, idMissedCallLog);
-					sendSms(missedCallNumber, destinationNumber, messageBody, idMissedCallLog);
+		if (intent != null) {
+			Bundle intentExtras = intent.getExtras();
+			if (intentExtras != null) {
+				String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
+				Long idMissedCallLog = intentExtras.getLong(Constants.tablemissedcallslog.column_id);
+				sentTime = intentExtras.getLong(Constants.tablemissedcallslog.column_scheduletime);
+				
+				if (stillNotificationActive(idMissedCallLog)) {
+					String destinationNumber = getDestinationNumber();
+					if (!destinationNumber.trim().equals("") && idMissedCallLog != null) {
+						String messageBody = getMessageBody(missedCallNumber, idMissedCallLog);
+						sendSms(missedCallNumber, destinationNumber, messageBody, idMissedCallLog);
+					}
 				}
 			}
 		}

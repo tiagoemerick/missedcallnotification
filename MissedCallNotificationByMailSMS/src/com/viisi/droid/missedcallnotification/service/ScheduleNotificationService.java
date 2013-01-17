@@ -32,11 +32,13 @@ public class ScheduleNotificationService extends Service {
 
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
-		Bundle intentExtras = intent.getExtras();
-		if (intentExtras != null) {
-			String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
-
-			scheduleNotification(missedCallNumber);
+		if (intent != null) {
+			Bundle intentExtras = intent.getExtras();
+			if (intentExtras != null) {
+				String missedCallNumber = intentExtras.getString(Constants.geral.missed_call_number);
+				
+				scheduleNotification(missedCallNumber);
+			}
 		}
 		return super.onStartCommand(intent, flags, startId);
 	}
