@@ -148,7 +148,7 @@ public class MissedCallLogDAO extends MissedCallNotiDS {
 
 		ContentValues values = new ContentValues();
 		values.put(Constants.tablemissedcallslog.column_state, idState);
-		if (sentTime != null) {
+		if (sentTime != null && sentTime.compareTo(0l) != 0) {
 			values.put(Constants.tablemissedcallslog.column_scheduletime, sentTime);
 		}
 
