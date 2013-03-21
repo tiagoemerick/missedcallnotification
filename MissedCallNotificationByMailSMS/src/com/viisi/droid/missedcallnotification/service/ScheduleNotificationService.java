@@ -44,8 +44,8 @@ public class ScheduleNotificationService extends Service {
 	}
 
 	private void scheduleNotification(String missedCallNumber) {
-		int actualDelayTime = getSharedPreferences().getInt(Constants.preferences.preference_delay_time, 99);
-		if (actualDelayTime != 99) {
+		int actualDelayTime = getSharedPreferences().getInt(Constants.preferences.preference_delay_time, EnumOptionsExpandableList.NOT_DEFINED.getId());
+		if (actualDelayTime != EnumOptionsExpandableList.NOT_DEFINED.getId()) {
 			Calendar timeScheduled = getTimeToSchedule(actualDelayTime);
 
 			boolean hasMail = getSharedPreferences().getBoolean(Constants.preferences.preference_by_mail, false);

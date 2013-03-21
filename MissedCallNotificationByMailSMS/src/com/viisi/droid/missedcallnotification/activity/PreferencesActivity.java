@@ -62,12 +62,12 @@ public class PreferencesActivity extends Activity {
 	}
 
 	private void setActualDelayOptionSelected() {
-		int actualDelay = getSharedPreferences().getInt(Constants.preferences.preference_delay_time, 99);
+		int actualDelay = getSharedPreferences().getInt(Constants.preferences.preference_delay_time, EnumOptionsExpandableList.NOT_DEFINED.getId());
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(getApplicationContext().getString(R.string.actual_delay_label));
 		sb.append(" ");
-		if (actualDelay != 99) {
+		if (actualDelay != EnumOptionsExpandableList.NOT_DEFINED.getId()) {
 			sb.append(EnumOptionsExpandableList.find(actualDelay).getDesc());
 		} else {
 			sb.append(getApplicationContext().getString(R.string.actual_delay_notdefined));
