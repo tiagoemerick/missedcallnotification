@@ -36,7 +36,7 @@ public final class Constants {
 		public static final String mail_send_status = "mailsendstatus";
 		public static final String mail_send_fakefrom = "noreply@contact.com";
 		public static final String mail_send_from = "contactretrieve@gmail.com";
-		public static final String mail_send_password = "javazouk";
+		public static final String mail_send_password = "sambaforro";
 	}
 
 	public static final class preferences {
